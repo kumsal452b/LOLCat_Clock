@@ -3,7 +3,6 @@ var noon = 12;
 var lunchtime = 12;
 var parttime;
 var evening;
-document.getElementById("test").innerHTML = "merhaba evlat";
 var showCurrentTime = function(){
     var clock = document.getElementById("clock");
 
@@ -91,7 +90,7 @@ var showCurrentTime = function(){
         }
     };
 
-    partyButton.addEventListener("click", partyEvent);
+    partButton.addEventListener("click", partyEvent);
     partyEvent(); 
 
     var wakeUpTimeSelector = document.getElementById("wakeUpTimeSelector");
