@@ -4,7 +4,7 @@ var lunchtime = 12;
 var parttime;
 var evening;
 
-var showCurrentTime = function{
+var showCurrentTime = function(){
     var clock = document.getElementById("clock");
 
     var currentTime = new Date();
@@ -26,5 +26,16 @@ var showCurrentTime = function{
         seconds = "0" + seconds;
     }
 
+    var clockTime = hours + ':' + minutes + ':' + seconds + ' ' + meridian
+    clock.innerHTML = clockTime
+
+    var updateClock = function () {
+        var time = new Date().getHours();
+        var messageText = "";
+        var image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
+
+        var timeEventJs = document.getElementById("time");
+        var localImageJS = document.getElementById('lolcatImage');
+    }
 
 }
