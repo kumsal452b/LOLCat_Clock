@@ -36,6 +36,15 @@ var showCurrentTime = function(){
 
         var timeEventJs = document.getElementById("time");
         var localImageJS = document.getElementById('lolcatImage');
+
+        if (time == parttime) {
+            image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
+            messageText = "Let's party!";
+        }
+        if (time == wakeupTime) {
+            image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
+            messageText = "Let's party!";
+        }
     }
 
 }
