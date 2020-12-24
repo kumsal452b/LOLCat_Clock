@@ -12,4 +12,10 @@ var showCurrentTime = function{
     var minutes = currentTime.getMinutes();
     var seconds = currentTime.getSeconds();
     var meridian = "AM";
+
+    if (hours >= noon) {
+        meridian = "PM"
+        hours -= 12;
+
+    }
 }
