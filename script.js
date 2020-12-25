@@ -3,7 +3,7 @@ var noon = 12;
 var lunchtime = 12;
 var parttime;
 var evening;
-var showCurrentTime = function(){
+var showCurrentTime = function () {
     var clock = document.getElementById("clock");
 
     var currentTime = new Date();
@@ -12,7 +12,7 @@ var showCurrentTime = function(){
     var seconds = currentTime.getSeconds();
     var meridian = "AM";
 
-    if (hours >= noon) {
+    if (hours > noon) {
         meridian = "PM";
         hours -= 12;
     }
@@ -27,13 +27,13 @@ var showCurrentTime = function(){
 
     var clockTime = hours + ':' + minutes + ':' + seconds + ' ' + meridian
     clock.innerHTML = clockTime
-
-    var updateClock = function () {
+    }
+var updateClock = function () {
         var time = new Date().getHours();
         var messageText = "";
         var image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
 
-        var timeEventJs = document.getElementById("time");
+        var timeEventJs = document.getElementById("timeEvent");
         var localImageJS = document.getElementById('lolcatImage');
 
         if (time == parttime) {
@@ -48,7 +48,7 @@ var showCurrentTime = function(){
             image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat2.jpg";
             messageText = "Let's have some lunch!";
         }
-        else if (time == naptime) {
+        else if (time == time) {
             image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/cat3.jpg";
             messageText = "Sleep tight!";
         }
@@ -67,7 +67,6 @@ var showCurrentTime = function(){
         console.log(messageText);
         timeEventJs.innerHTML = messageText;
         localImageJS.src = image
-
         showCurrentTime();
     }
     updateClock();
@@ -75,7 +74,7 @@ var showCurrentTime = function(){
     var oneSecond = 1000;
     setInterval(updateClock, oneSecond);
 
-    var partButton = document.getElementById("partTimeButton");
+    var partyButton = document.getElementById("partTimeButton");
 
     var partyEvent = function () {
         if (partytime < 0) {
@@ -90,7 +89,7 @@ var showCurrentTime = function(){
         }
     };
 
-    partButton.addEventListener("click", partyEvent);
+    partyButton.addEventListener("click", partyEvent());
     partyEvent(); 
 
     var wakeUpTimeSelector = document.getElementById("wakeUpTimeSelector");
@@ -120,5 +119,3 @@ var showCurrentTime = function(){
     };
 
     napTimeSelector.addEventListener("change", napEvent);
-
-}
