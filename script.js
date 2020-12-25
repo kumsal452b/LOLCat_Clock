@@ -1,7 +1,7 @@
 var wakeupTime = 7;
 var noon = 12;
 var lunchtime = 12;
-var parttime;
+var partytime;
 var evening;
 var showCurrentTime = function () {
     var clock = document.getElementById("clock");
@@ -36,7 +36,7 @@ var updateClock = function () {
         var timeEventJs = document.getElementById("timeEvent");
         var localImageJS = document.getElementById('lolcatImage');
 
-        if (time == parttime) {
+        if (time == partytime) {
             image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
             messageText = "Let's party!";
         }
@@ -74,7 +74,7 @@ var updateClock = function () {
     var oneSecond = 1000;
     setInterval(updateClock, oneSecond);
 
-    var partyButton = document.getElementById("partTimeButton");
+var partyButton = document.getElementById("partyTimeButton");
 
     var partyEvent = function () {
         if (partytime < 0) {
@@ -89,7 +89,8 @@ var updateClock = function () {
         }
     };
 
-    partyButton.addEventListener("click", partyEvent());
+partyButton.addEventListener("click", partyEvent);
+//document.getElementById("myBtn").addEventListener("click", displayDate);
     partyEvent(); 
 
     var wakeUpTimeSelector = document.getElementById("wakeUpTimeSelector");
